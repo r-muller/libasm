@@ -26,34 +26,34 @@
 ;================ MAIN ====================
 
 section .text
-    global _ft_strcmp
+    global ft_strcmp
 
-_ft_strcmp:
+ft_strcmp:
 	mov rax, 0
 	mov r15, 0
-	jmp _compare
+	jmp compare
 
-_compare:
+compare:
 	mov al, [rdi]
 	mov r15b, [rsi]
 	cmp al, r15b
-	jne _finish
+	jne finish
 	cmp al, 0
-	je _first_step_finish
+	je first_step_finish
 	inc rsi
 	inc rdi
-	jmp _compare
+	jmp compare
 
-_finish:
+finish:
 	sub rax, r15
 	ret
 
-_first_step_finish:
+first_step_finish:
 	cmp r15b, 0
-	je _egual
+	je egual
 	inc r15b
-	jmp _compare
+	jmp compare
 
-_egual:
+egual:
 	mov rax, 0
 	ret

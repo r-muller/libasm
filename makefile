@@ -3,7 +3,7 @@ OBJS    	= ${SRCS:.s=.o}
 NAME    	= libasm.a
 CC      	= nasm
 RM			= rm -f
-CFLAGS 		= -f macho64
+CFLAGS 		= -felf64
 
 all:        ${NAME}
 
@@ -12,7 +12,7 @@ all:        ${NAME}
 
 
 $(NAME):    ${OBJS}
-			ar rcs ${NAME} ${OBJS}
+			ar rcs ${NAME} ${OBJS}			
 			ranlib ${NAME}
 
 clean:
@@ -26,6 +26,7 @@ re:         fclean all
 test:
 			$(MAKE) re
 			$(MAKE) clean
-			gcc -L. -lasm main.c
+			gcc main.c -L. -lasm
 			./a.out
+
 .PHONY:     all clean fclean re

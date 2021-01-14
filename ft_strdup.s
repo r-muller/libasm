@@ -26,24 +26,31 @@
 
 ;================ MAIN ====================
 section .text
-	global _ft_strdup
-	extern _malloc
-	extern _ft_strlen
-	extern _ft_strcpy
+	global ft_strdup
+	extern malloc
+	extern ft_strlen
+	extern ft_strcpy
+	extern __errno_location
 
-_ft_strdup:
+ft_strdup:
 	push rdi
-	call _ft_strlen
+	call ft_strlen
 	mov r15, rdi
 	inc rax
 	mov rdi, rax
-	call _malloc
-	je _error
+	call malloc
+	je erro
 	mov rdi, rax ;dst
 	mov rsi, r15 ;src
-	call _ft_strcpy
+	call ft_strcpy
 	pop rdi
 	ret
 
-_error:
-	ret
+erro:
+	neg rax
+    	push rax
+	call __errno_location
+	pop rbx
+	mov [rax], rbx
+	mov rax, '\0'
+    	ret

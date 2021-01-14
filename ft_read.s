@@ -18,22 +18,32 @@
 ; recuperer les parametres passer par un programme C [rbp+16], [rbp+24], ..... 
 
 ; rax Valeur de retour des fonctions 
+;mov rax, 0x02000003 	MAC
+;  ___error 		MAC
 
+;erro:
+;	push rax
+;	call __errno_location
+;	pop qword [rax]
+;	mov rax, -1
+;	ret
 
 ;================ MAIN ====================
 section .text
-	global _ft_read
-	extern ___error
+	global ft_read
+	extern __errno_location
 
-_ft_read:
-	mov rax, 0x02000003
+ft_read:
+	mov rax, 0x00
 	syscall
-	jb _err
+	jb erro
 	ret
 
-_err:
-    push rax
-	call ___error
-	pop qword [rax]
+erro:
+	neg rax
+    	push rax
+	call __errno_location
+	pop rbx
+	mov [rax], rbx
 	mov rax, -1
-    ret
+    	ret

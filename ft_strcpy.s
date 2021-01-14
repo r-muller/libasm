@@ -22,20 +22,20 @@
 
 ;================ MAIN ====================
 section .text
-	global _ft_strcpy
+	global ft_strcpy
 
-_ft_strcpy:
+ft_strcpy:
 	mov rax, rdi
-	jmp _loop_copy
+	jmp loop_copy
 
-_loop_copy: 
+loop_copy: 
 	mov r15b, [rsi]
 	mov [rdi], r15b
 	cmp r15b, 0
-	je _exit
+	je exiit
 	inc rdi
 	inc rsi
-	jmp _loop_copy
+	jmp loop_copy
 
-_exit:
+exiit:
 	ret

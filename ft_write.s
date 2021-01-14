@@ -16,22 +16,33 @@
 
 ;		RAX 		RDI					RSI					RDX
 ;write	0x01		unsigned int fd		const char *buf		size_t count
-; mov rax, 0x02000004
+; mov rax, 0x02000004 	MAC
+;  ___error 		MAC
+
+;erro:
+;	push rax
+;	call __errno_location
+;	pop qword [rax]
+;	mov rax, -1
+;	ret
 
 ;================ MAIN ====================
 section .text
-    global _ft_write
-	extern ___error
+    global ft_write
+	extern __errno_location
 
-_ft_write:
-	mov rax, 0x02000004
+ft_write:
+	mov rax, 0x01
 	syscall
-	jb _err
+	jb erro
 	ret
 
-_err:
-    push rax
-	call ___error
-	pop qword [rax]
+
+erro:
+	neg rax
+    	push rax
+	call __errno_location
+	pop rbx
+	mov [rax], rbx
 	mov rax, -1
-    ret
+    	ret
