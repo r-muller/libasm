@@ -29,12 +29,20 @@ void	check_ft_write(void)
 {
 	printf("\nCHECK FT_WRITE\n");
 	printf("errno: %d\n", errno);
-	ssize_t ret = write(1, "salut\n", 7); 
+
+
+	ssize_t ret = write(3, "Lorem ipsum dolor sit amet, consectetur adipiscingelit. Sed in malesuada purus. Etiam a scelerisque massa. Ut non euismod elit. Aliquambibendum dolor mi, id fringilla tellus pulvinar eu. Fusce vel fermentum sem. Crasvolutpat, eros eget rhoncus rhoncus, diam augue egestas dolor, vitae rutrum nisifelis sed purus. Mauris magna ex, mollis non suscipit eu, lacinia ac turpis. Phasellusac tortor et lectus fermentum lobortis eu at mauris. Vestibulum sit amet posueretortor, sit amet consequat amet.", 0); 
 	printf("%-20s: %zu\n", "libc", ret);
-	ret = ft_write(1, "salut\n", 7);
-	printf("%-20s: %zu\n\n", "libasm", ret);
+printf("errno: %d\n", errno);
+
+	ret = ft_write(3, "Lorem ipsum dolor sit amet, consectetur adipiscingelit. Sed in malesuada purus. Etiam a scelerisque massa. Ut non euismod elit. Aliquambibendum dolor mi, id fringilla tellus pulvinar eu. Fusce vel fermentum sem. Crasvolutpat, eros eget rhoncus rhoncus, diam augue egestas dolor, vitae rutrum nisifelis sed purus. Mauris magna ex, mollis non suscipit eu, lacinia ac turpis. Phasellusac tortor et lectus fermentum lobortis eu at mauris. Vestibulum sit amet posueretortor, sit amet consequat amet.", 0);
+	printf("%-20s: %zu\n", "libasm", ret);
+printf("errno: %d\n", errno);
 	
-	ret = write(1, "salut\n", 8); 
+
+
+printf("\n");
+	/*ret = write(1, "salut\n", 8); 
 	printf("%-20s: %zu\n", "libc", ret);
 	ret = ft_write(1, "salut\n", 8);
 	printf("%-20s: %zu\n\n", "libasm", ret);
@@ -57,7 +65,7 @@ void	check_ft_write(void)
 	ret = write(-1, "bonjour", 7);; 
 	printf("%-20s: %zu\n", "libc", ret);
 	ret = ft_write(-1, "bonjour", 7);;
-	printf("%-20s: %zu\n\n", "libasm", ret);
+	printf("%-20s: %zu\n\n", "libasm", ret);*/
 
 
 }
@@ -126,11 +134,11 @@ void check_ft_strdup() {
 
 int		main(void)
 {
-	check_ft_strlen();
+	//check_ft_strlen();
 	check_ft_write();
-	check_ft_strcmp();
-	check_ft_strcpy();
-	check_ft_read();
-	check_ft_strdup();
+	//check_ft_strcmp();
+	//check_ft_strcpy();
+	//check_ft_read();
+	//check_ft_strdup();
 	return (0);
 }

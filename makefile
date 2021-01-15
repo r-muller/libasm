@@ -26,7 +26,7 @@ re:         fclean all
 test:
 			$(MAKE) re
 			$(MAKE) clean
-			gcc main.c -no-pie -L. -lasm
+			clang main.c -L. -lasm
 			./a.out
 
 .PHONY:     all clean fclean re
