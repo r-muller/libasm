@@ -18,107 +18,122 @@ void	check_ft_strlen(void)
 	printf("%-20s: %zu\n", "libc", strlen(""));
 	printf("%-20s: %zu\n", "libasm", ft_strlen(""));
 	
-	printf("%-20s: %zu\n", "libc", strlen("cou\0cou"));
-	printf("%-20s: %zu\n", "libasm", ft_strlen("cou\0cou"));
+	printf("%-20s: %zu\n", "libc", strlen("On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."));
+	printf("%-20s: %zu\n", "libasm", ft_strlen("On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."));
 
-	printf("%-20s: %zu\n", "libc", strlen("coucou"));
-	printf("%-20s: %zu\n", "libasm", ft_strlen("coucou"));
-}
-
-void	check_ft_write(void)
-{
-	printf("\nCHECK FT_WRITE\n");
-	printf("errno: %d\n", errno);
-
-
-	ssize_t ret = write(3, "Lorem ipsum dolor sit amet, consectetur adipiscingelit. Sed in malesuada purus. Etiam a scelerisque massa. Ut non euismod elit. Aliquambibendum dolor mi, id fringilla tellus pulvinar eu. Fusce vel fermentum sem. Crasvolutpat, eros eget rhoncus rhoncus, diam augue egestas dolor, vitae rutrum nisifelis sed purus. Mauris magna ex, mollis non suscipit eu, lacinia ac turpis. Phasellusac tortor et lectus fermentum lobortis eu at mauris. Vestibulum sit amet posueretortor, sit amet consequat amet.", 0); 
-	printf("%-20s: %zu\n", "libc", ret);
-printf("errno: %d\n", errno);
-
-	ret = ft_write(3, "Lorem ipsum dolor sit amet, consectetur adipiscingelit. Sed in malesuada purus. Etiam a scelerisque massa. Ut non euismod elit. Aliquambibendum dolor mi, id fringilla tellus pulvinar eu. Fusce vel fermentum sem. Crasvolutpat, eros eget rhoncus rhoncus, diam augue egestas dolor, vitae rutrum nisifelis sed purus. Mauris magna ex, mollis non suscipit eu, lacinia ac turpis. Phasellusac tortor et lectus fermentum lobortis eu at mauris. Vestibulum sit amet posueretortor, sit amet consequat amet.", 0);
-	printf("%-20s: %zu\n", "libasm", ret);
-printf("errno: %d\n", errno);
-	
-
-
-printf("\n");
-	/*ret = write(1, "salut\n", 8); 
-	printf("%-20s: %zu\n", "libc", ret);
-	ret = ft_write(1, "salut\n", 8);
-	printf("%-20s: %zu\n\n", "libasm", ret);
-
-	ret = write(1, "salut\n", 1); 
-	printf("%-20s: %zu\n", "libc", ret);
-	ret = ft_write(1, "salut\n", 1);
-	printf("%-20s: %zu\n\n", "libasm", ret);
-
-	ret = write(1, "sal\0ut\n", 1); 
-	printf("%-20s: %zu\n", "libc", ret);
-	ret = ft_write(1, "sal\0ut\n", 1);
-	printf("%-20s: %zu\n\n", "libasm", ret);
-
-	ret = write(1, NULL, 1); 
-	printf("%-20s: %zu\n", "libc", ret);
-	ret = ft_write(1, NULL, 1);
-	printf("%-20s: %zu\n\n", "libasm", ret);
-
-	ret = write(-1, "bonjour", 7);; 
-	printf("%-20s: %zu\n", "libc", ret);
-	ret = ft_write(-1, "bonjour", 7);;
-	printf("%-20s: %zu\n\n", "libasm", ret);*/
-
-
-}
-
-void	check_ft_strcmp(void){
-	printf("\nCHECK FT_STRCMP\n");
-	printf("%-20s: %d\n", "libc", strcmp("z", "h"));
-	printf("%-20s: %d\n", "libasm", ft_strcmp("z", "h"));
-
-	printf("%-20s: %d\n", "libc", strcmp("salut", "sblut"));
-	printf("%-20s: %d\n", "libasm", ft_strcmp("salut", "sblut"));
-
-	printf("%-20s: %d\n", "libc", strcmp("coucou", "coucou"));
-	printf("%-20s: %d\n", "libasm", ft_strcmp("coucou", "coucou"));
-
-	// printf("%-20s: %d\n", "libc", strcmp(NULL, NULL));
-	// printf("%-20s: %d\n", "libasm", ft_strcmp(NULL, NULL));
 }
 
 void check_ft_strcpy() {
-	char chaine[255];
-	char chaine1[255];
+	char chaine[1000];
+	char chaine1[1000];
 
 
 	printf("\nCHECK FT_STRCPY\n");
 
-	printf("%-20s: %-10s |%s\n", "libc", chaine, strcpy(chaine, "h"));
-	printf("%-20s: %-10s |%s\n", "libasm", chaine, ft_strcpy(chaine1, "h"));
+	printf("%-20s: %-10s |%s\n", "libc", chaine, strcpy(chaine, ""));
+	printf("%-20s: %-10s |%s\n", "libasm", chaine, ft_strcpy(chaine1, ""));
 
-	printf("%-20s: %-10s |%s\n", "libc", chaine, strcpy(chaine, "coucou"));
-	printf("%-20s: %-10s |%s\n", "libc", chaine, ft_strcpy(chaine, "coucou"));
+	printf("%-20s: %-10s |%s\n", "libc", chaine, strcpy(chaine, "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."));
+	printf("%-20s: %-10s |%s\n", "libc", chaine, ft_strcpy(chaine, "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."));
 
 	printf("%-20s: %-10s |%s\n", "libc", chaine, strcpy(chaine, "bonj\0our"));
 	printf("%-20s: %-10s |%s\n", "libc", chaine, ft_strcpy(chaine, "bonj\0our"));
 
 	printf("%-20s: %-10s |%s\n", "libc", chaine, strcpy(chaine, "1\0"));
 	printf("%-20s: %-10s |%s\n", "libc", chaine, ft_strcpy(chaine, "1\0"));
-
-	printf("%-20s: %-10s |%s\n", "libc", chaine, strcpy(chaine, "qwertyuiopasdfghjklzxcvbnm"));
-	printf("%-20s: %-10s |%s\n", "libc", chaine, ft_strcpy(chaine, "qwertyuiopasdfghjklzxcvbnm"));
 }
+
+void	check_ft_strcmp(void){
+	printf("\nCHECK FT_STRCMP\n");
+	printf("%-20s: %d\n", "libc", strcmp("", ""));
+	printf("%-20s: %d\n", "libasm", ft_strcmp("", ""));
+
+	printf("%-20s: %d\n", "libc", strcmp("", "salut"));
+	printf("%-20s: %d\n", "libasm", ft_strcmp("", "salut"));
+
+	printf("%-20s: %d\n", "libc", strcmp("coucou", ""));
+	printf("%-20s: %d\n", "libasm", ft_strcmp("coucou", ""));
+
+	printf("%-20s: %d\n", "libc", strcmp("coucou", "caucau"));
+	printf("%-20s: %d\n", "libasm", ft_strcmp("coucou", "caucau"));
+
+	printf("%-20s: %d\n", "libc", strcmp("caucau", "coucou"));
+	printf("%-20s: %d\n", "libasm", ft_strcmp("caucau", "coucou"));
+
+	printf("%-20s: %d\n", "libc", strcmp("coucou", "coucou"));
+	printf("%-20s: %d\n", "libasm", ft_strcmp("coucou", "coucou"));
+}
+
+void	check_ft_write(void)
+{
+	char *chaine = "Lorem ipsum dolor sit amet, consectetur adipiscingelit. Sed in malesuada purus. Etiam a scelerisque massa. Ut non euismod elit. Aliquambibendum dolor mi, id fringilla tellus pulvinar eu. Fusce vel fermentum sem. Crasvolutpat, eros eget rhoncus rhoncus, diam augue egestas dolor, vitae rutrum nisifelis sed purus. Mauris magna ex, mollis non suscipit eu, lacinia ac turpis. Phasellusac tortor et lectus fermentum lobortis eu at mauris. Vestibulum sit amet posueretortor, sit amet consequat amet.";
+	printf("\nCHECK FT_WRITE : \t");
+	printf("errno: %d\n", errno);
+	
+	printf("FD:0 / CHAINE / strlen(CHAINE)\n");
+	ssize_t ret = write(0, chaine, strlen(chaine)); 
+	printf("\n%-20s: %zu\n", "libc", ret);
+	printf("errno: %d\n", errno);
+	ret = ft_write(0, chaine, strlen(chaine));
+	printf("\n%-20s: %zu\n", "libasm", ret);
+	printf("errno: %d\n", errno);
+
+	printf("\nFD:1 / CHAINE / strlen(CHAINE)\n");
+	ret = write(1, chaine, strlen(chaine)); 
+	printf("\n%-20s: %zu\n", "libc", ret);
+	printf("errno: %d\n", errno);
+	ret = ft_write(1, chaine, strlen(chaine));
+	printf("\n%-20s: %zu\n", "libasm", ret);
+	printf("errno: %d\n", errno);
+
+	printf("\nFD:2 / CHAINE / strlen(CHAINE)\n");
+	ret = write(2, chaine, strlen(chaine)); 
+	printf("\n%-20s: %zu\n", "libc", ret);
+	printf("errno: %d\n", errno);
+	ret = ft_write(2, chaine, strlen(chaine));
+	printf("\n%-20s: %zu\n", "libasm", ret);
+	printf("errno: %d\n", errno);
+
+	printf("\nFD:3 / CHAINE / strlen(CHAINE)\n");
+	ret = write(3, chaine, strlen(chaine)); 
+	printf("%-20s: %zu\n", "libc", ret);
+	printf("errno: %d\n", errno);
+	ret = ft_write(3, chaine, strlen(chaine));
+	printf("%-20s: %zu\n", "libasm", ret);
+	printf("errno: %d\n", errno);
+}
+
 
 void check_ft_read() {
 	int ret;
-	char buff[256];
+	char buff[100];
 
 
-	printf("\nCHECK FT_READ\n");
-	ret = ft_read(2, buff, 256);
-	printf("%-20s: %-10d |%s\n", "libasm", ret, buff);
-
-	ret = read(2, buff, 256);
+	printf("\nCHECK FT_READ: \t");printf("errno: %d\n", errno);
+	printf("\nFD:1 / CHAINE / strlen(CHAINE)\n");
+	ret = read(1, buff, 100);
 	printf("%-20s: %-10d |%s\n", "libc", ret, buff);
+	printf("errno: %d\n", errno);
+	ret = ft_read(1, buff, 100);
+	printf("%-20s: %-10d |%s\n", "libasm", ret, buff);
+	printf("errno: %d\n", errno);
+
+	printf("\nFD:2 / CHAINE / strlen(CHAINE)\n");
+	ret = read(2, buff, 10);
+	printf("%-20s: %-10d |%s\n", "libc", ret, buff);
+	printf("errno: %d\n", errno);
+	ret = ft_read(2, buff, 10);
+	printf("%-20s: %-10d |%s\n", "libasm", ret, buff);
+	printf("errno: %d\n", errno);
+
+	printf("\nFD:3 / CHAINE / strlen(CHAINE)\n");
+	ret = ft_read(3, buff, 10);
+	printf("%-20s: %-10d |%s\n", "libasm", ret, buff);
+	printf("errno: %d\n", errno);
+	ret = read(3, buff, 10);
+	printf("%-20s: %-10d |%s\n", "libc", ret, buff);
+	printf("errno: %d\n", errno);
+	
 }
 
 void check_ft_strdup() {
@@ -134,11 +149,11 @@ void check_ft_strdup() {
 
 int		main(void)
 {
-	//check_ft_strlen();
+	check_ft_strlen();
+	check_ft_strcpy();
+	check_ft_strcmp();
 	check_ft_write();
-	//check_ft_strcmp();
-	//check_ft_strcpy();
-	//check_ft_read();
-	//check_ft_strdup();
+	check_ft_read();
+	check_ft_strdup();
 	return (0);
 }

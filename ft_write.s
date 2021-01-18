@@ -37,12 +37,11 @@ ft_write:
 	jb erro
 	ret
 
-
 erro:
 	neg rax
-    	push rax
+    push rax
 	call __errno_location
 	pop rbx
 	mov [rax], rbx
 	mov rax, -1
-    	ret
+    ret

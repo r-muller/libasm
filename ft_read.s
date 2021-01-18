@@ -28,6 +28,13 @@
 ;	mov rax, -1
 ;	ret
 
+;erro:
+;	neg rax
+;    mov	rdx, rax
+;	call __errno_location
+;	mov	[rax], rdx
+;	mov	rax, -1
+;    ret
 ;================ MAIN ====================
 section .text
 	global ft_read
@@ -41,9 +48,9 @@ ft_read:
 
 erro:
 	neg rax
-    	push rax
+    push rax
 	call __errno_location
 	pop rbx
 	mov [rax], rbx
 	mov rax, -1
-    	ret
+    ret
