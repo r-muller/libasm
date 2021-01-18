@@ -139,10 +139,12 @@ void check_ft_read() {
 void check_ft_strdup() {
 	printf("CHECK FT_STRDUP\n");
 
-	printf("%-20s: %s\n", "libc", strdup("coucou8"));
-	printf("%-20s: %s\n", "libasm", ft_strdup("coucou8"));
 	printf("%-20s: %s\n", "libc", strdup(""));
 	printf("%-20s: %s\n", "libasm", ft_strdup(""));
+
+	printf("%-20s: %s\n", "libc", strdup("Lorem ipsum dolor sit amet, consectetur adipiscingelit. Sed in malesuada purus. Etiam a scelerisque massa. Ut non euismod elit. Aliquambibendum dolor mi, id fringilla tellus pulvinar eu. Fusce vel fermentum sem. Crasvolutpat, eros eget rhoncus rhoncus, diam augue egestas dolor, vitae rutrum nisifelis sed purus. Mauris magna ex, mollis non suscipit eu, lacinia ac turpis. Phasellusac tortor et lectus fermentum lobortis eu at mauris. Vestibulum sit amet posueretortor, sit amet consequat amet."));
+	printf("%-20s: %s\n", "libasm", ft_strdup("Lorem ipsum dolor sit amet, consectetur adipiscingelit. Sed in malesuada purus. Etiam a scelerisque massa. Ut non euismod elit. Aliquambibendum dolor mi, id fringilla tellus pulvinar eu. Fusce vel fermentum sem. Crasvolutpat, eros eget rhoncus rhoncus, diam augue egestas dolor, vitae rutrum nisifelis sed purus. Mauris magna ex, mollis non suscipit eu, lacinia ac turpis. Phasellusac tortor et lectus fermentum lobortis eu at mauris. Vestibulum sit amet posueretortor, sit amet consequat amet."));
+	
 	printf("%-20s: %s\n", "libc", strdup("couc\0ou"));
 	printf("%-20s: %s\n", "libasm", ft_strdup("couc\0ou"));
 }
